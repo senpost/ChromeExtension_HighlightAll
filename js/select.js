@@ -71,11 +71,16 @@ function highlightSelection(e)
 	var testText = selectedText.toLowerCase();
 	
 	//Exit if selection is whitespace or what was previously selected
-	if (selectedText == '' || lastText == testText)
+	if (lastText == testText)
 	{
 		return;
 	}
 	
+        if(selectedText == '')
+        {
+		clearHighlightsOnPage();
+	}
+
 	// Clear all highlights if requested
 	if (clearBetweenSelections)
 	{
